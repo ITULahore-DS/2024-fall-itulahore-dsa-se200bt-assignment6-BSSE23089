@@ -201,6 +201,11 @@ int Queue::size()
     return Size;
 }
 
+int Queue::peek()
+{
+    return top->getData();
+}
+
 // Print all elements in the queue.
 void Queue::printQueue()
 {

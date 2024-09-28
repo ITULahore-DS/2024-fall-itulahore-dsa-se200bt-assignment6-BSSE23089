@@ -48,6 +48,7 @@ public:
     void enqueue(int data);
     void dequeue();
     int size();
+    int peek();
     void printQueue();
 };
 #endif
