@@ -26,7 +26,7 @@ void stackMenu() {
                 break;
             case 2:
                 myStack.pop();
-                cout << "Popped from the stack." << endl;
+              
                 break;
             case 3:
                 if (myStack.isEmpty()) {
@@ -75,7 +75,7 @@ void queueMenu() {
                 break;
             case 2:
                 myQueue.dequeue();
-                cout << "Dequeued from the queue." << endl;
+               
                 break;
             case 3:
                 if (myQueue.isEmpty()) {

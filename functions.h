@@ -50,5 +50,6 @@ public:
     int size();
     int peek();
     void printQueue();
+    void clear();
 };
 #endif

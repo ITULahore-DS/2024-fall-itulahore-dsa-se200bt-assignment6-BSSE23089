@@ -72,7 +72,7 @@ void Stack::push(int data)
     else
     {
         Node *temp = top;
-        top = newNode; // Set the new node as the top.
+        top = newNode;      // Set the new node as the top.
         top->setNext(temp); // Link new node to the previous top.
     }
 
@@ -88,8 +88,8 @@ void Stack::pop()
     }
     Node *temp = top;
     top = top->getNext(); // Set the top to the next element.
-    delete temp; // Delete the old top node.
-    count--; // Decrement the number of elements in the stack.
+    delete temp;          // Delete the old top node.
+    count--;              // Decrement the number of elements in the stack.
 }
 
 // Peek the value at the top of the stack without removing it.
@@ -127,9 +127,9 @@ void Stack::printStack()
     }
     int temp = top->getData();
     cout << temp << endl; // Print the value at the top.
-    pop(); // Remove the top element.
-    printStack(); // Recursive call to print the remaining stack.
-    push(temp); // Push the value back onto the stack.
+    pop();                // Remove the top element.
+    printStack();         // Recursive call to print the remaining stack.
+    push(temp);           // Push the value back onto the stack.
 }
 
 // Queue constructor: Initializes an empty queue with top, end as nullptr and Size as 0.
@@ -174,7 +174,7 @@ void Queue::enqueue(int data)
     else
     {
         end->setNext(newNode); // Link the last node to the new node.
-        end = newNode; // Set the new node as the end of the queue.
+        end = newNode;         // Set the new node as the end of the queue.
     }
     Size++; // Increment the size of the queue.
 }
@@ -190,7 +190,7 @@ void Queue::dequeue()
     {
         Node *temp = top;
         top = top->getNext(); // Set the top to the next element.
-        delete temp; // Delete the old front node.
+        delete temp;          // Delete the old front node.
     }
     Size--; // Decrement the size of the queue.
 }
@@ -218,8 +218,18 @@ void Queue::printQueue()
     while (increment < size())
     {
         cout << temp->getData() << " "; // Print the value at the current node.
-        temp = temp->getNext(); // Move to the next node.
+        temp = temp->getNext();         // Move to the next node.
         increment++;
     }
     cout << endl; // Print a new line after all elements.
+}
+
+void Queue::clear()
+{
+    
+    while (!isEmpty())
+    {
+        dequeue(); // dequeue elements until queue is empty.
+    }
+    Size = 0;
 }
